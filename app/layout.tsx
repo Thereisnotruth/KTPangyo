@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import StyledComponentsRegistry from '@/lib/registry'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,9 +12,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Nextjs에서는 html과 body를 자동으로 생성하지 않기 때문에 Root Layout에서 html과 body 정의 필수
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body>
+        <StyledComponentsRegistry>
+          {children}
+        </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }
