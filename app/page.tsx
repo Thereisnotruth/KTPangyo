@@ -1,6 +1,6 @@
 'use client'
-import Button from "@/components/atoms/Button"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'next/navigation'
+import Button from '@/components/atoms/Button'
 
 export default function Home() {
   const router = useRouter()

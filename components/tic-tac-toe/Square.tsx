@@ -1,5 +1,7 @@
+import Button from '../atoms/Button'
+
 export default function Square() {
   return (
-    <button className='square'>X</button>
+    <Button>X</Button>
   )
 }
