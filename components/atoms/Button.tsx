@@ -1,12 +1,14 @@
-import ButtonStyle from '@/styled/atoms/button.style'
-import type ButtonProps from '@/types/button.type'
+import type { ComponentPropsWithoutRef } from 'react'
+import ButtonStyle from '@/styles/atoms/button.style'
+import type { ButtonProps } from '@/types/component.type'
 
-export default function Button({ children, color, outline, onClick }: ButtonProps) {
+export default function Button({
+  children,
+  ...props
+}: ButtonProps & ComponentPropsWithoutRef<'button'>) {
   return (
     <ButtonStyle
-      color={color}
-      onClick={onClick}
-      outline={outline}
+      {...props}
     >
       {children}
     </ButtonStyle>
